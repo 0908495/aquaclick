@@ -5,6 +5,8 @@ html, body {
     margin:0px; padding:0px;
     background-image: url('../images/bg.png');
     background-size: cover;
+    user-select: none;
+    text-align: center;
 }
 
 body * {
@@ -13,6 +15,7 @@ body * {
     margin:0px; padding:0px;
     box-sizing: border-box;
     background-repeat: no-repeat;
+    text-align: center;
 }
 
 
@@ -20,15 +23,17 @@ yellowfish {
 	width:100px; height:50px;
 	background-image: url('../images/yellowfish.png');
     background-size: cover;
+    cursor: pointer;
 }
 
 pufferfish {
 	width:100px; height: 100px;
 	background-image: url('../images/pufferfish.png');
     background-size: cover;
+    cursor: pointer;
 }
 
-pufferfishbigger {
+.pufferfishbigger {
 	width:200px; height: 200px;
 	background-image: url('../images/pufferfish.png');
     background-size: cover;
@@ -38,18 +43,24 @@ legfish {
     width:120px; height: 100px;
 	background-image: url('../images/legfish.png');
     background-size: cover;
+    cursor: pointer;
 }
 
 start {
     background-color:red;
     background-position: center;
     width: 100%;
-    height: 100%
+    height: 100%;
 }
 
 end {
     background-color:red;
     background-position: center;
     width: 100%;
-    height: 100%
+    height: 100%;
+}
+
+#score{
+    text-align: center;
+    font-size: 40px;
 }
