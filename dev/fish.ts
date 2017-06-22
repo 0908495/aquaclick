@@ -10,8 +10,8 @@ class Fish {
         this.div = document.createElement(fish);
         document.body.appendChild(this.div);
         // start positie
-        this.x = Math.random() * window.innerWidth;
-        this.y = Math.random() * window.innerHeight;
+        this.x = (Math.random() * (window.innerWidth/2)) + (window.innerWidth/4);
+        this.y = (Math.random() * (window.innerHeight/2)) + (window.innerHeight/4);
         
         // start snelheid
         this.speedX = Math.ceil(Math.random() * speedF);
@@ -21,8 +21,6 @@ class Fish {
     }
 
     protected clickHandler(e:MouseEvent){
-        this.div.clientWidth *1.5;
-        this.div.clientHeight *1.5;
         console.log("hoi ik klik")
     }
 

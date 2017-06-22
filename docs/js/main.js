@@ -13,20 +13,29 @@ var Diver = (function () {
     }
     return Diver;
 }());
+var End = (function () {
+    function End() {
+        this.div = document.createElement("end");
+        document.body.appendChild(this.div);
+        var h = document.createElement("H1");
+        var t = document.createTextNode("Je hebt de snelle vis te pakken gekregen!");
+        h.appendChild(t);
+        document.body.appendChild(h);
+    }
+    return End;
+}());
 var Fish = (function () {
     function Fish(fish, speedF) {
         var _this = this;
         this.div = document.createElement(fish);
         document.body.appendChild(this.div);
-        this.x = Math.random() * window.innerWidth;
-        this.y = Math.random() * window.innerHeight;
+        this.x = (Math.random() * (window.innerWidth / 2)) + (window.innerWidth / 4);
+        this.y = (Math.random() * (window.innerHeight / 2)) + (window.innerHeight / 4);
         this.speedX = Math.ceil(Math.random() * speedF);
         this.speedY = Math.ceil(Math.random() * speedF);
         this.div.addEventListener("click", function (e) { return _this.clickHandler(e); });
     }
     Fish.prototype.clickHandler = function (e) {
-        this.div.clientWidth * 1.5;
-        this.div.clientHeight * 1.5;
         console.log("hoi ik klik");
     };
     Fish.prototype.move = function () {
@@ -79,15 +88,39 @@ var Legfish = (function (_super) {
     return Legfish;
 }(Fish));
 window.addEventListener("load", function () {
-    new Game();
+    new Start();
 });
 var Pufferfish = (function (_super) {
     __extends(Pufferfish, _super);
     function Pufferfish() {
         return _super.call(this, "pufferfish", 2) || this;
     }
+    Pufferfish.prototype.clickHandler = function (e) {
+        this.div.style.transform = "scale(" + 200 + "px, " + 200 + "px)";
+        console.log("Ik klik oooook");
+        new End();
+    };
     return Pufferfish;
 }(Fish));
+var Start = (function () {
+    function Start() {
+        var _this = this;
+        this.div = document.createElement("start");
+        document.body.appendChild(this.div);
+        this.button = document.createElement("BUTTON");
+        var btnText = document.createTextNode("SPELEN");
+        console.log(this.button);
+        this.button.appendChild(btnText);
+        document.body.appendChild(this.button);
+        this.button.addEventListener("click", function () { return _this.onClick(); });
+    }
+    Start.prototype.onClick = function () {
+        this.div.remove();
+        this.button.remove();
+        new Game();
+    };
+    return Start;
+}());
 var Yellowfish = (function (_super) {
     __extends(Yellowfish, _super);
     function Yellowfish() {
