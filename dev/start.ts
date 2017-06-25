@@ -16,7 +16,7 @@ class Start {
         this.button.addEventListener("click", () => this.onClick());
     }
 
-    private onClick(){
+    private onClick() : void{
         this.div.remove();
         this.button.remove();
 
