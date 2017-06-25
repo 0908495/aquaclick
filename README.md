@@ -28,5 +28,10 @@ Als laatst wordt er een instance gemaakt van het eindscherm als de vis met benen
 
 In de UML is goed te zien dat ik Encapsulation toe heb gepast in mijn game. Alle instance variabelen en functies in de parents (fish) zijn protected. Zo kunnen alleen de childs erbij. In de rest van de classes heb ik alle instance variabelen en functies private gemaakt, behalve de points in de game. Dit omdat deze benaderd moesten worden door legfish.ts.
 
-- Composition
-- Inheritance
+<h2>Composition</h2>
+
+Ook is in de UML de stukken te zien waar ik composition gebruik. Zo heeft de start een Game, heeft de game een Fish en heeft de legfish een End
+
+<h2>Inheritance</h2>
+
+Als laatste puntje de inheritance. Dit is wederom terug te vinden in de UML, maar ik zal het alsnog toelichten. De Fish is de parent class van de legfish, de pufferfish en de yellowfish. Zij overerven alles van de parent, het enige wat ze niet gemeen hebben, is dat ze ook nog een aparte click functie hebben voor hun eigen speciale eigenschappen.
