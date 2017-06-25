@@ -6,7 +6,7 @@ class Yellowfish extends Fish{
         this.div.addEventListener("click", () => this.click());
     }
 
-    private click(){
+    private click() : void{
         super.clickHandler();
         var randomColor = Math.random() * 360;
         this.div.style.webkitFilter = "hue-rotate("+randomColor+"deg)";
