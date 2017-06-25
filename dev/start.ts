@@ -1,8 +1,6 @@
 class Start {
 
     private div:HTMLElement;
-    private h: HTMLElement;
-    private t: string;
     private button: HTMLElement;
 
     constructor(){
