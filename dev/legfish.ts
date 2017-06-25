@@ -11,7 +11,7 @@ class Legfish extends Fish{
         this.div.addEventListener("click", () => this.click());
     }
 
-    private click(){
+    private click() : void{
         super.clickHandler();
         this.game.points--;
         let score = document.createElement("div");
