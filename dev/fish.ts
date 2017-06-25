@@ -19,7 +19,7 @@ class Fish {
         this.div.addEventListener("click", () => this.clickHandler());
     }
 
-    protected clickHandler(){
+    protected clickHandler() : void{
         this.speedX = this.speedX*1.6;
         this.speedY = this.speedY*1.6;
     }
