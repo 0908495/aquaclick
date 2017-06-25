@@ -30,7 +30,7 @@ In de UML is goed te zien dat ik Encapsulation toe heb gepast in mijn game. Alle
 
 <h2>Composition</h2>
 
-Ook is in de UML de stukken te zien waar ik composition gebruik. Zo heeft de start een Game, heeft de game een Fish en heeft de legfish een End
+Ook is in de UML de stukken te zien waar ik composition gebruik. Zo heeft de start een Game, heeft de game een Fish en heeft de legfish een End.
 
 <h2>Inheritance</h2>
 
