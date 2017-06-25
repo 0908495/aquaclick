@@ -16,14 +16,14 @@ class Game {
         this.showScore();
     }
 
-    private showScore(){
+    private showScore() : void{
         let score = document.createElement("div");
         score.setAttribute("id","score")
         document.body.appendChild(score);
         document.getElementById("score").innerHTML = "Click the legfish "+this.points+" more times to win!"
     }
     
-    private gameLoop(){
+    private gameLoop() : void{
         for (let f of this.fishes){
             f.move();
         }
