@@ -12,10 +12,6 @@ var End = (function () {
     function End() {
         this.div = document.createElement("end");
         document.body.appendChild(this.div);
-        var h = document.createElement("H1");
-        var t = document.createTextNode("Je hebt de snelle vis te pakken gekregen!");
-        h.appendChild(t);
-        document.body.appendChild(h);
     }
     return End;
 }());
@@ -24,19 +20,15 @@ var Fish = (function () {
         var _this = this;
         this.div = document.createElement(fish);
         document.body.appendChild(this.div);
-        this.x = (Math.random() * window.innerWidth / 1.1);
-        this.y = (Math.random() * window.innerHeight / 1.1);
+        this.x = (Math.random() * window.innerWidth / 1.3);
+        this.y = (Math.random() * window.innerHeight / 1.3);
         this.speedX = Math.ceil(Math.random() * speedF);
         this.speedY = Math.ceil(Math.random() * speedF);
-        this.div.addEventListener("click", function (e) { return _this.clickHandler(e); });
+        this.div.addEventListener("click", function () { return _this.clickHandler(); });
     }
-    Fish.prototype.clickHandler = function (e) {
-        console.log("hoi ik klik");
-        this.speedX = this.speedX * 2;
-        this.speedY = this.speedY * 2;
-        var randomColor = Math.random() * 360;
-        this.div.style.webkitFilter = "hue-rotate(" + randomColor + "deg)";
-        this.div.style.filter = "hue-rotate(" + randomColor + "deg)";
+    Fish.prototype.clickHandler = function () {
+        this.speedX = this.speedX * 1.6;
+        this.speedY = this.speedY * 1.6;
     };
     Fish.prototype.move = function () {
         this.x += this.speedX;
@@ -56,9 +48,7 @@ var Game = (function () {
         var _this = this;
         this.points = 3;
         this.fishes = new Array();
-        for (var i = 0; i < 1; i++) {
-            this.fishes.push(new Legfish(this));
-        }
+        this.fishes.push(new Legfish(this));
         for (var i = 0; i < 20; i++) {
             this.fishes.push(new Yellowfish());
             this.fishes.push(new Pufferfish());
@@ -70,7 +60,7 @@ var Game = (function () {
         var score = document.createElement("div");
         score.setAttribute("id", "score");
         document.body.appendChild(score);
-        document.getElementById("score").innerHTML = "Je moet nog " + this.points + "keer de legfish klikken om te winnen!";
+        document.getElementById("score").innerHTML = "Click the legfish " + this.points + " more times to win!";
     };
     Game.prototype.gameLoop = function () {
         var _this = this;
@@ -85,19 +75,21 @@ var Game = (function () {
 var Legfish = (function (_super) {
     __extends(Legfish, _super);
     function Legfish(game) {
-        var _this = _super.call(this, "legfish", 20) || this;
-        _this.speedX = 5;
-        _this.speedY = 5;
+        var _this = _super.call(this, "legfish", 0) || this;
+        _this.speedX = 3.5;
+        _this.speedY = 3.5;
         _this.game = game;
+        _this.click;
+        _this.div.addEventListener("click", function () { return _this.click(); });
         return _this;
     }
-    Legfish.prototype.clickHandler = function (e) {
-        console.log("ik ben snel");
+    Legfish.prototype.click = function () {
+        _super.prototype.clickHandler.call(this);
         this.game.points--;
         var score = document.createElement("div");
         score.setAttribute("id", "score");
         document.body.appendChild(score);
-        document.getElementById("score").innerHTML = "Je moet nog " + this.game.points + " keer de legfish klikken om te winnen!";
+        document.getElementById("score").innerHTML = "Click the legfish " + this.game.points + " more times to win!";
         if (this.game.points == 0) {
             new End();
         }
@@ -111,11 +103,12 @@ var Pufferfish = (function (_super) {
     __extends(Pufferfish, _super);
     function Pufferfish() {
         var _this = _super.call(this, "pufferfish", 2) || this;
-        _this.div.addEventListener("click", function () { return _this.clickHandler(); });
+        _this.click;
+        _this.div.addEventListener("click", function () { return _this.click(); });
         return _this;
     }
-    Pufferfish.prototype.clickHandler = function () {
-        console.log("Ik klik ook");
+    Pufferfish.prototype.click = function () {
+        _super.prototype.clickHandler.call(this);
         this.div.classList.add("pufferfishbigger");
     };
     return Pufferfish;
@@ -125,9 +118,8 @@ var Start = (function () {
         var _this = this;
         this.div = document.createElement("start");
         document.body.appendChild(this.div);
-        this.button = document.createElement("BUTTON");
-        var btnText = document.createTextNode("SPELEN");
-        console.log(this.button);
+        this.button = document.createElement("button");
+        var btnText = document.createTextNode("Play!");
         this.button.appendChild(btnText);
         document.body.appendChild(this.button);
         this.button.addEventListener("click", function () { return _this.onClick(); });
@@ -143,9 +135,16 @@ var Yellowfish = (function (_super) {
     __extends(Yellowfish, _super);
     function Yellowfish() {
         var _this = _super.call(this, "yellowfish", 5) || this;
-        _this.clickHandler;
+        _this.click;
+        _this.div.addEventListener("click", function () { return _this.click(); });
         return _this;
     }
+    Yellowfish.prototype.click = function () {
+        _super.prototype.clickHandler.call(this);
+        var randomColor = Math.random() * 360;
+        this.div.style.webkitFilter = "hue-rotate(" + randomColor + "deg)";
+        this.div.style.filter = "hue-rotate(" + randomColor + "deg)";
+    };
     return Yellowfish;
 }(Fish));
 //# sourceMappingURL=main.js.map

@@ -9,10 +9,9 @@ class Start {
         this.div = document.createElement("start");
         document.body.appendChild(this.div);
     
-        this.button = document.createElement("BUTTON");
-        var btnText = document.createTextNode("SPELEN");
+        this.button = document.createElement("button");
+        var btnText = document.createTextNode("Play!");
         
-        console.log(this.button);
         this.button.appendChild(btnText);
         document.body.appendChild(this.button);
 

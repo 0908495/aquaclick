@@ -2,14 +2,13 @@ class Pufferfish extends Fish{
 
     constructor(){
         super("pufferfish",2);
-        this.div.addEventListener("click", () => this.clickHandler());
+        this.click;
+        this.div.addEventListener("click", () => this.click());
     }
-    protected clickHandler(){
-        console.log("Ik klik ook");
-        //this.div.remove();
-        this.div.classList.add("pufferfishbigger");
 
-        //new End();
+    private click(){
+        super.clickHandler();
+        this.div.classList.add("pufferfishbigger");
     }
 }
 

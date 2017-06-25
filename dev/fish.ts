@@ -9,25 +9,19 @@ class Fish {
     constructor(fish:string, speedF:number) {
         this.div = document.createElement(fish)
         document.body.appendChild(this.div);
-        // start positie
-        this.x = (Math.random() * window.innerWidth/1.1);
-        this.y = (Math.random() * window.innerHeight/1.1);
+
+        this.x = (Math.random() * window.innerWidth/1.3);
+        this.y = (Math.random() * window.innerHeight/1.3);
         
-        // start snelheid
         this.speedX = Math.ceil(Math.random() * speedF);
         this.speedY = Math.ceil(Math.random() * speedF);
 
-        this.div.addEventListener("click", (e: MouseEvent) => this.clickHandler(e))
-
+        this.div.addEventListener("click", () => this.clickHandler());
     }
 
-    protected clickHandler(e:MouseEvent){
-        console.log("hoi ik klik")
-        this.speedX = this.speedX*2;
-        this.speedY = this.speedY*2;
-        var randomColor = Math.random() * 360;
-        this.div.style.webkitFilter = "hue-rotate("+randomColor+"deg)";
-        this.div.style.filter = "hue-rotate("+randomColor+"deg)";
+    protected clickHandler(){
+        this.speedX = this.speedX*1.6;
+        this.speedY = this.speedY*1.6;
     }
 
     protected move() : void{
