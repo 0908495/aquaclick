@@ -22,9 +22,11 @@ Vervolgens worden hier instances in gemaakt:
 
 <i>this.fishes.push(new Pufferfish());</i>
 
-Als laatst
+Als laatst wordt er een instance gemaakt van het eindscherm als de vis met benen drie keer is aangeklikt.
 
-- Classes en instances
-- Encapsulation
+<h2>Encapsulation</h2>
+
+In de UML is goed te zien dat ik Encapsulation toe heb gepast in mijn game. Alle instance variabelen en functies in de parents (fish) zijn protected. Zo kunnen alleen de childs erbij. In de rest van de classes heb ik alle instance variabelen en functies private gemaakt, behalve de points in de game. Dit omdat deze benaderd moesten worden door legfish.ts.
+
 - Composition
 - Inheritance
