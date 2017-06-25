@@ -6,6 +6,8 @@ Welkom bij Aquaclick! De vis met benen moet in dit spel drie keer aangeklikt wor
 
 Hier is het spel te spelen: https://0908495.github.io/aquaclick/
 
+![UML](http://i.imgur.com/KwUO8YV.png)
+
 <h2>Classes en instances</h2>
 
 Ik heb verschillende classes gemaakt. Een <i>main</i> die de <i>start</i> aanroept. Deze linkt door naar de class <i>game</i> wanneer er op de knop wordt geklikt. In deze game zijn meerdere classes te zien. De <i>yellowfish</i>, <i>pufferfish</i>, <i>legfish</i>, deze drie soorten vissen overerven van hun parent, namelijk <i>fish</i>. Zodra het spel is uitgespeeld kom je bij de laatste class terecht, <i>end</i>
