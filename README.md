@@ -6,6 +6,8 @@ Welkom bij Aquaclick! De vis met benen moet in dit spel drie keer aangeklikt wor
 
 Hier is het spel te spelen: https://0908495.github.io/aquaclick/
 
+<h2>UML</h2>
+
 ![UML](http://i.imgur.com/KwUO8YV.png)
 
 <h2>Classes en instances</h2>
