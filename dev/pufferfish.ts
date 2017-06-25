@@ -6,7 +6,7 @@ class Pufferfish extends Fish{
         this.div.addEventListener("click", () => this.click());
     }
 
-    private click(){
+    private click() : void{
         super.clickHandler();
         this.div.classList.add("pufferfishbigger");
     }
